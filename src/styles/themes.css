@@ -1,0 +1,149 @@
+/* Temas de cores */
+
+/* Tema Pastel (padrão) */
+:root,
+[data-theme="pastel"] {
+  --bg-primary: linear-gradient(135deg, #ffeef8 0%, #f0f8ff 100%);
+  --bg-secondary: rgba(255, 255, 255, 0.8);
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-board: rgba(186, 173, 159, 0.2);
+  --bg-empty-cell: rgba(238, 228, 218, 0.3);
+  
+  --text-primary: #776e65;
+  --text-light: #f9f6f2;
+  --text-dark: #494949;
+  
+  --accent-primary: #ff9a9e;
+  --accent-primary-alpha: rgba(255, 154, 158, 0.3);
+  --accent-secondary: #fecfef;
+  
+  --border-color: rgba(186, 173, 159, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  /* Cores dos blocos */
+  --tile-2: #ffeef8;
+  --tile-4: #ffe0f0;
+  --tile-8: #ffb3d9;
+  --tile-16: #ff99cc;
+  --tile-32: #ff80bf;
+  --tile-64: #ff66b3;
+  --tile-128: #ff4da6;
+  --tile-256: #ff3399;
+  --tile-512: #ff1a8c;
+  --tile-1024: #ff0080;
+  --tile-2048: #e6007a;
+  --tile-super: #cc0066;
+}
+
+/* Tema Dark */
+[data-theme="dark"] {
+  --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --bg-secondary: rgba(42, 42, 42, 0.9);
+  --bg-card: rgba(60, 60, 60, 0.9);
+  --bg-board: rgba(50, 50, 50, 0.8);
+  --bg-empty-cell: rgba(70, 70, 70, 0.5);
+  
+  --text-primary: #e0e0e0;
+  --text-light: #ffffff;
+  --text-dark: #cccccc;
+  
+  --accent-primary: #bb86fc;
+  --accent-primary-alpha: rgba(187, 134, 252, 0.3);
+  --accent-secondary: #3700b3;
+  
+  --border-color: rgba(100, 100, 100, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Tema Matrix */
+[data-theme="matrix"] {
+  --bg-primary: linear-gradient(135deg, #0d1b0d 0%, #1a3a1a 100%);
+  --bg-secondary: rgba(0, 20, 0, 0.9);
+  --bg-card: rgba(0, 40, 0, 0.8);
+  --bg-board: rgba(0, 60, 0, 0.3);
+  --bg-empty-cell: rgba(0, 80, 0, 0.2);
+  
+  --text-primary: #00ff00;
+  --text-light: #ffffff;
+  --text-dark: #66ff66;
+  
+  --accent-primary: #00ff00;
+  --accent-primary-alpha: rgba(0, 255, 0, 0.3);
+  --accent-secondary: #004d00;
+  
+  --border-color: rgba(0, 255, 0, 0.3);
+  --shadow-color: rgba(0, 255, 0, 0.2);
+  
+  /* Cores dos blocos Matrix */
+  --tile-2: #001a00;
+  --tile-4: #003300;
+  --tile-8: #004d00;
+  --tile-16: #006600;
+  --tile-32: #008000;
+  --tile-64: #009900;
+  --tile-128: #00b300;
+  --tile-256: #00cc00;
+  --tile-512: #00e600;
+  --tile-1024: #00ff00;
+  --tile-2048: #33ff33;
+  --tile-super: #66ff66;
+}
+
+/* Tema Neon */
+[data-theme="neon"] {
+  --bg-primary: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
+  --bg-secondary: rgba(20, 0, 20, 0.9);
+  --bg-card: rgba(40, 0, 40, 0.8);
+  --bg-board: rgba(60, 0, 60, 0.3);
+  --bg-empty-cell: rgba(80, 0, 80, 0.2);
+  
+  --text-primary: #ff00ff;
+  --text-light: #ffffff;
+  --text-dark: #ff66ff;
+  
+  --accent-primary: #ff00ff;
+  --accent-primary-alpha: rgba(255, 0, 255, 0.3);
+  --accent-secondary: #660066;
+  
+  --border-color: rgba(255, 0, 255, 0.3);
+  --shadow-color: rgba(255, 0, 255, 0.2);
+  
+  /* Cores dos blocos Neon */
+  --tile-2: #1a001a;
+  --tile-4: #330033;
+  --tile-8: #4d004d;
+  --tile-16: #660066;
+  --tile-32: #800080;
+  --tile-64: #990099;
+  --tile-128: #b300b3;
+  --tile-256: #cc00cc;
+  --tile-512: #e600e6;
+  --tile-1024: #ff00ff;
+  --tile-2048: #ff33ff;
+  --tile-super: #ff66ff;
+}
+
+/* Aplicar background */
+body {
+  background: var(--bg-primary);
+}
+
+/* Transições suaves para mudanças de tema */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Glow effects para temas escuros */
+[data-theme="matrix"] .theme-btn,
+[data-theme="matrix"] .theme-select,
+[data-theme="neon"] .theme-btn,
+[data-theme="neon"] .theme-select {
+  box-shadow: 0 0 10px var(--accent-primary-alpha);
+}
+
+[data-theme="matrix"] .theme-btn:hover,
+[data-theme="matrix"] .theme-select:focus,
+[data-theme="neon"] .theme-btn:hover,
+[data-theme="neon"] .theme-select:focus {
+  box-shadow: 0 0 20px var(--accent-primary-alpha);
+}

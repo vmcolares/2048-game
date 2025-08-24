@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2048 Game - Jogando</title>
+  
+  <!-- Favicon - Controle de videogame -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/global.css" />
+  <link rel="stylesheet" href="/src/styles/themes.css" />
+  <link rel="stylesheet" href="/src/styles/game.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="game-header">
+      <div class="header-left">
+        <p id="player-name" class="player-greeting"></p>
+      </div>
+      
+      <div class="header-center">
+        <h1 class="game-title">2048 🎮</h1>
+      </div>
+      
+      <div class="header-right">
+        <div class="theme-controls">
+          <label class="theme-label" for="color-theme">Temas:</label>
+          <select id="color-theme" class="theme-select" aria-label="Selecionar tema de cores">
+            <option value="pastel">Pastel 🌸</option>
+            <option value="matrix">Matrix 🟢</option>
+            <option value="neon">Neon 🌈</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-container">
+      <div class="game-instructions">
+        <h3>Como Jogar:</h3>
+        <div class="instructions-grid">
+          <div class="instruction-item">
+            <span class="instruction-key">↑ ↓ ← →</span>
+            <span>Use as setas para mover</span>
+          </div>
+          <div class="instruction-item">
+            <span class="instruction-emoji">🔄</span>
+            <span>Combine números iguais</span>
+          </div>
+          <div class="instruction-item">
+            <span class="instruction-emoji">🎯</span>
+            <span>Chegue ao 2048!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-main-area">
+        <div class="game-info">
+          <div class="score-section">
+            <div class="score-item">
+              <span class="score-label">Pontuação</span>
+              <span id="current-score" class="score-value">0</span>
+            </div>
+            <div class="score-item">
+              <span class="score-label">Recorde</span>
+              <span id="best-score" class="score-value">0</span>
+            </div>
+          </div>
+          
+          <div class="game-controls">
+            <button id="new-game" class="control-btn">Novo Jogo 🔄</button>
+            <button id="back-home" class="control-btn secondary">Voltar 🏠</button>
+          </div>
+        </div>
+
+        <div class="game-board-container">
+          <div id="game-board" class="game-board"></div>
+          <div id="game-over" class="game-over hidden">
+            <div class="game-over-content">
+              <h2 class="game-over-title">Fim de Jogo! 😅</h2>
+              <p class="game-over-score">Sua pontuação: <span id="final-score">0</span></p>
+              <div class="game-over-actions">
+                <button id="restart-game" class="control-btn">Tentar Novamente 🔄</button>
+                <button id="home-game" class="control-btn secondary">Voltar ao Início 🏠</button>
+              </div>
+            </div>
+          </div>
+          <div id="you-win" class="you-win hidden">
+            <div class="you-win-content">
+              <h2 class="you-win-title">Parabéns! 🎉</h2>
+              <p class="you-win-message">Você chegou ao 2048!</p>
+              <div class="you-win-actions">
+                <button id="continue-game" class="control-btn">Continuar Jogando ▶️</button>
+                <button id="new-game-win" class="control-btn secondary">Novo Jogo 🔄</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-sidebar-right">
+        <div style="
+          background: var(--bg-card);
+          border: 2px dashed var(--border-color);
+          border-radius: 16px;
+          padding: 2rem;
+          text-align: center;
+          color: var(--text-dark);
+          opacity: 0.5;
+        ">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
+          <div>Área reservada</div>
+          <div style="font-size: 0.8rem; margin-top: 0.5rem;">Futuras funcionalidades</div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="footer">
+      <p>Desenvolvido por <strong>Virgínia Colares</strong> 💜</p>
+      <p class="copyright">© 2025 - Todos os direitos reservados</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/game-main.ts"></script>
+</body>
+</html>

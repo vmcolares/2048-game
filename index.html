@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2048 Game - Bem-vindo!</title>
+  
+  <!-- Favicon - Controle de videogame -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/global.css" />
+  <link rel="stylesheet" href="/src/styles/themes.css" />
+  <link rel="stylesheet" href="/src/styles/home.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="theme-controls">
+        <div class="theme-group">
+          <label class="theme-label" for="color-theme">Temas:</label>
+          <select id="color-theme" class="theme-select" aria-label="Selecionar tema de cores">
+            <option value="pastel">Pastel (claro) 🌸</option>
+            <option value="matrix">Matrix (escuro) 🟢</option>
+            <option value="neon">Neon (escuro) 🌈</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="home-container">
+      <div class="welcome-card">
+        <div class="welcome-header">
+          <h1 class="title">
+            <span class="title-emoji">🎮</span>
+            Bem-vindo ao 2048 Game
+            <span class="title-emoji">✨</span>
+          </h1>
+          
+          <p class="subtitle">
+            Combine os números e chegue ao bloco 2048!
+          </p>
+        </div>
+
+        <div class="user-form">
+          <label for="username" class="form-label">Como você gostaria de ser chamado?</label>
+          <input 
+            type="text" 
+            id="username" 
+            class="username-input" 
+            placeholder="Digite seu nome..."
+            maxlength="20"
+            required
+          />
+          <button id="start-game" class="start-btn" disabled>
+            Iniciar Jogo 🚀
+          </button>
+        </div>
+
+        <div class="game-info">
+          <div class="info-item">
+            <span class="info-emoji">🎯</span>
+            <span>Use as setas do teclado para mover</span>
+          </div>
+          <div class="info-item">
+            <span class="info-emoji">🏆</span>
+            <span>Seu recorde será salvo automaticamente</span>
+          </div>
+          <div class="info-item">
+            <span class="info-emoji">🎨</span>
+            <span>Escolha seu tema favorito</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Desenvolvido por <strong>Virgínia Colares</strong> 💜</p>
+      <p class="copyright">© 2025 - Todos os direitos reservados</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
